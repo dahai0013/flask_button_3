@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Run an python script: </h1>
+        <form method="POST" action="/send">
+            <div class="form-group">
+                Router IP adddress(eg: 172.1.1.1)<br>
+                <input type="text" name="ipaddress"><br>
+                Script Name(eg: myscript.py)<br>
+                <input type="text" name="script_name"><br>
+                Argument 1<br>
+                <input type="text" name="argument1"><br>
+                Argument 2<br>
+                <input type="text" name="argument2"></br>
+            </div>
+            <input class="btn btn-primary" type="submit" value="submit">
+        </form>
+    </body>
+</html>
