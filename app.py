@@ -18,11 +18,17 @@ def send():
         argument1 = request.form['argument1']
         argument2 = request.form['argument2']
         command = 'python ' + script_name +' '+ ipaddress +' '+ argument1 +' '+ argument2
+        #script_doc__ = print ( script_name.__doc__)
 
-        #
-        script_output = subprocess.call("python hello_world.py")
+        #run a script and return: code and output
+        file_object = open('thing.txt', 'w')
+        return_codes = subprocess.call(command, stdout=file_object )
+        file_object.close()
+        file_object = open('thing.txt', 'r')
+        script_output = file_object.read()
+        file_object.close()
 
-        return render_template('index.html', script_output=script_output , command=command )
+        return render_template('index.html', return_codes=return_codes, script_output=script_output , command=command )
     return render_template('index.html')
 
 if __name__ == "__main__":
